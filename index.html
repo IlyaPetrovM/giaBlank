@@ -1,73 +1,75 @@
-<head><link rel="stylesheet" href="style.css" />
-<script type="text/javascript">
-function startTime()
-{
-var tm=new Date();
-var h=tm.getHours();
-var m=tm.getMinutes();
-var s=tm.getSeconds();
-m=checkTime(m);
-s=checkTime(s);
-document.getElementById('txt').innerHTML=h+":"+m+":"+s;
-t=setTimeout('startTime()',500);
-}
-function checkTime(i)
-{
-if (i<10)
-{
-i="0" + i;
-}
-return i;
-}
-</script>
-</head>
-<body onload="startTime()">
-<div id=body>
-<div id='txt'></div>
-<div>
-	<p>Регион</p>
-	<input type=text class=value />
-</div>
+п»ї<html><head>
+        <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src='time.js'></script>
+    </head>
+    <body onload="startTime()">
+    <div id='time'></div>
+        <div class=table>
+        <div class="row">
+            <div class=cell>
+                <p>Р РµРіРёРѕРЅ</p>
+                <input type=text class=value placeholder='77' maxlength="2" size=2/>
+            </div>
 
-<div>
-	<p>Класс</p>
-		<div>
-			<p>Номер</p>
-			<input type=text class=value />
-			<p>Буква</p>
-			<input type=text class=value />
-		</div>
-</div>
+            <div class=cell>
+                <p>РљР»Р°СЃСЃ</p>
+                    <div id=classId>
+                        <div class=cell>
+                        <p>РќРѕРјРµСЂ</p>
+                        <input type=text maxlength="2" class=value id=nclass placeholder="9 " size=2/>
+                        </div>
+                            <div class=cell>
+                        <p>Р‘СѓРєРІР°</p>
+                        <input type=text class=value id=word placeholder=" " size=1/>
+                        </div>
+                    </div>
+            </div>
 
-<div>
-	<p>Код пункта проведения</p>\
-	<input type=text class=value />
-</div>
+            <div class=cell>
+                <p>РљРѕРґ РїСѓРЅРєС‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ</p>
+                <input type=text class=value placeholder="3124" maxlength="4" size=4 />
+            </div>
 
-<div>
-	<p>Номер аудитории</p>
-	<input type=text class=value />
-</div>
+            <div class=cell>
+                <p>РќРѕРјРµСЂ Р°СѓРґРёС‚РѕСЂРёРё</p>
+                <input type=text class=value maxlength="4" placeholder="    " size=4 />
+            </div>
+        </div>
+        <div class="row">
+            <div class=cell>
+                <p>РќР°Р·РІР°РЅРёРµ РїСЂРµРґРјРµС‚Р°</p>
+                <input type=text class=value placeholder="РђРќР“Р›РР™РЎРљР" maxlength="9" size=9/>
+            </div>
 
-<div>
-	<p>Название предмета</p>
-	<input type=text class=value />
-</div>
+            <div class=cell>
+                <p>РљРѕРґ РїСЂРµРґРјРµС‚Р°</p>
+                <input type=text class=value placeholder="29" value="29" maxlength="2" size=2 />
+            </div>
 
-<div>
-	<p>Код предмета</p>
-	<input type=text class=value />
-</div>
-
-<div>
-	<p>Дата проведения</p>
-	<input type=text class=value />
-</div>
-
-<div>
-	<p>Код образовательной организации</p>
-	<input type=text class=value />
-</div>
-	
-</div>
-</body>
+            <div class=cell>
+                <p>Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ</p>
+                <input type=text class=value placeholder="24-05-18" maxlength="8" size=8 />
+            </div>
+        </div>
+            </div>
+                    <div id=codes>
+                <p>РљРѕРґС‹ РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹С… РѕСЂРіР°РЅРёР·Р°С†РёРёР№</p>
+                <div id=orgInfo>
+                <div id=orgNames>
+                    <input type=text class=orgName   />
+                    <input type=text class=orgName  />
+                    <input type=text class=orgName  />
+                    <input type=text class=orgName  />
+                    <input type=text class=orgName   />
+                </div>
+                <div id=orgValues>
+               <input type=text class=value placeholder="     " maxlength="5" size=5 />
+                <input type=text class=value placeholder="     " maxlength="5" size=5 />
+                <input type=text class=value placeholder="     " maxlength="5" size=5 />
+                <input type=text class=value placeholder="     " maxlength="5" size=5 />
+                <input type=text class=value placeholder="     " maxlength="5" size=5 />
+                    </div>
+                    </div>
+            </div>
+    </body>
+    </html>

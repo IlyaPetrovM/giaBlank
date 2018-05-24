@@ -5,9 +5,101 @@
 }
    
 .value{
+/*    height: 50px;*/
+    padding: 0;
+/*    padding-left: 2px;*/
 	font-family: arialnn, 'Arial';
+    font-size: 30px;
 	border:none;
+    border-left: black 2px solid;
+    display: block;
 }
 .value:hover{
 	background-color:#8f8;
+}
+
+.cell {
+    display: table-cell;
+    width: 25%;
+    padding-top: 30px;
+}
+
+.row {
+    display: table-row;
+}
+
+p {
+    margin-bottom: 0;
+    font-family: 'Arial';
+    font-size: 22px;
+}
+
+#nclass {
+
+}
+
+#time {
+    font-family: 'Consolas';
+    font-size: 100px;
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+#word {
+
+}
+
+#orgCodes {
+    text-align: left;
+}
+
+.orgcol {
+/*    display: inline-flex;*/
+/*    float: left;*/
+}
+
+
+
+#classId {
+    display: table;
+}
+
+.table {
+    display: table;
+    width: 100%;
+}
+
+.orgName {
+    font-family: 'Arial Narrow', 'Arial';
+/*    border:0.5px red solid;*/
+    height: 50px;
+    font-size: 30px;
+    display: block;
+    width: 600px;
+    border-bottom: solid black 1px;
+}
+
+#orgInfo input{
+    height: 40px;
+}
+
+#orgNames {
+    padding: 0;
+    margin: 0;
+/*    width: ;*/
+}
+
+#orgInfo {
+    display: flex;
+    width: 100%;
+}
+
+#orgValues {
+    display: inline-block;
+/*    width: 30%;;*/
+}
+
+#codes {
+    margin-top: 20px;
 }
