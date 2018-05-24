@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: arialnn; /* Гарнитура шрифта */
+    src: url(arialnn.ttf); /* Путь к файлу со шрифтом */
+}
+   
+.value{
+	font-family: arialnn, 'Arial';
+	border:none;
+}
+.value:hover{
+	background-color:#8f8;
+}

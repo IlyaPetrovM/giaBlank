@@ -1,0 +1,73 @@
+<head><link rel="stylesheet" href="style.css" />
+<script type="text/javascript">
+function startTime()
+{
+var tm=new Date();
+var h=tm.getHours();
+var m=tm.getMinutes();
+var s=tm.getSeconds();
+m=checkTime(m);
+s=checkTime(s);
+document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+t=setTimeout('startTime()',500);
+}
+function checkTime(i)
+{
+if (i<10)
+{
+i="0" + i;
+}
+return i;
+}
+</script>
+</head>
+<body onload="startTime()">
+<div id=body>
+<div id='txt'></div>
+<div>
+	<p>Регион</p>
+	<input type=text class=value />
+</div>
+
+<div>
+	<p>Класс</p>
+		<div>
+			<p>Номер</p>
+			<input type=text class=value />
+			<p>Буква</p>
+			<input type=text class=value />
+		</div>
+</div>
+
+<div>
+	<p>Код пункта проведения</p>\
+	<input type=text class=value />
+</div>
+
+<div>
+	<p>Номер аудитории</p>
+	<input type=text class=value />
+</div>
+
+<div>
+	<p>Название предмета</p>
+	<input type=text class=value />
+</div>
+
+<div>
+	<p>Код предмета</p>
+	<input type=text class=value />
+</div>
+
+<div>
+	<p>Дата проведения</p>
+	<input type=text class=value />
+</div>
+
+<div>
+	<p>Код образовательной организации</p>
+	<input type=text class=value />
+</div>
+	
+</div>
+</body>
