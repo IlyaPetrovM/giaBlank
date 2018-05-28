@@ -15,3 +15,18 @@ function checkTime(i){
     }
     return i;
 }
+function FormatNumberLength(num, length) {
+    var r = "" + num;
+    while (r.length < length) {
+        r = "0" + r;
+    }
+    return r;
+}
+function setDate(){
+	exDate = document.getElementById('exDate');
+	var tm=new Date();
+	var d=FormatNumberLength(tm.getDate(),2);
+	var m=FormatNumberLength(tm.getMonth()+1,2);
+	var y=FormatNumberLength(tm.getFullYear()%100,2);
+	exDate.placeholder = d+'-'+m+'-'+y;
+}

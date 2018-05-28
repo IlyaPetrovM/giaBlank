@@ -1,6 +1,8 @@
 ﻿<html><head>
         <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src='time.js'></script>
+    <script type="text/javascript" src='exam.js'></script>
+    <title>ГИА-бланк</title>
     </head>
     <body onload="startTime()">
     <div id='time'></div>
@@ -38,17 +40,17 @@
         <div class="row">
             <div class=cell>
                 <p>Название предмета</p>
-                <input type=text class=value placeholder="АНГЛИЙСКИ" maxlength="9" size=9/>
+                <input type=text class=value placeholder="РУССКИЙ  " maxlength="9" size=9/>
             </div>
 
             <div class=cell>
                 <p>Код предмета</p>
-                <input type=text class=value placeholder="29" value="29" maxlength="2" size=2 />
+                <input type=text class=value placeholder="01" value="" maxlength="2" size=2 />
             </div>
 
             <div class=cell>
                 <p>Дата проведения</p>
-                <input type=text class=value placeholder="24-05-18" maxlength="8" size=8 />
+                <input type=text class=value id='exDate' placeholder="29-05-18" maxlength="8" size=8 />
             </div>
         </div>
             </div>
@@ -56,20 +58,17 @@
                 <p>Коды образовательных организациий</p>
                 <div id=orgInfo>
                 <div id=orgNames>
-                    <input type=text class=orgName   />
-                    <input type=text class=orgName  />
-                    <input type=text class=orgName  />
-                    <input type=text class=orgName  />
-                    <input type=text class=orgName   />
+                   
                 </div>
                 <div id=orgValues>
-               <input type=text class=value placeholder="     " maxlength="5" size=5 />
-                <input type=text class=value placeholder="     " maxlength="5" size=5 />
-                <input type=text class=value placeholder="     " maxlength="5" size=5 />
-                <input type=text class=value placeholder="     " maxlength="5" size=5 />
-                <input type=text class=value placeholder="     " maxlength="5" size=5 />
-                    </div>
+               </div>
                     </div>
             </div>
     </body>
+	<script>
+		setDate();
+		setUpExam();
+		var exDate = document.getElementById('exDate');
+        exDate.onchange = setUpExam;
+	</script>
     </html>
