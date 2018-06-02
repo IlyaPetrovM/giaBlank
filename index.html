@@ -1,11 +1,21 @@
 ﻿<html><head>
         <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src='time.js'></script>
-    <script type="text/javascript" src='exam.js'></script>
+    
+    
     <title>ГИА-бланк</title>
     </head>
     <body onload="startTime()">
-    <div id='time'></div>
+	<div id=titleBlock>
+		<div class='titleStart'>Начало экзамена</div>
+		<div class='titleCurrent'>Текущее время</div>
+		<div class='titleEnd'>Окончание экзамена</div>
+	</div>
+	<div id=timeblock>
+		<button id=startEx>Начать экзамен</button>
+		<div id='timeStart'>00:00:00</div>
+		<div id='time'>00:00:00</div>
+		<div id='timeEnd'>00:00:00</div>
+	</div>
         <div class=table>
         <div class="row">
             <div class=cell>
@@ -34,18 +44,18 @@
 
             <div class=cell>
                 <p>Номер аудитории</p>
-                <input type=text class=value maxlength="4" placeholder="    " size=4 />
+                <input type=text class=value id=auditory maxlength="4" placeholder="    " size=4 />
             </div>
         </div>
         <div class="row">
             <div class=cell>
                 <p>Название предмета</p>
-                <input type=text class=value placeholder="РУССКИЙ  " maxlength="9" size=9/>
+                <input type=text class=value id=subjTitle placeholder="РУССКИЙ  " maxlength="9" size=9/>
             </div>
 
             <div class=cell>
                 <p>Код предмета</p>
-                <input type=text class=value placeholder="01" value="" maxlength="2" size=2 />
+                <input type=text class=value id=subjCode placeholder="01" value="" maxlength="2" size=2 />
             </div>
 
             <div class=cell>
@@ -65,6 +75,7 @@
                     </div>
             </div>
     </body>
+	<script type="text/javascript" src='exam.js'></script>
 	<script>
 		setDate();
 		setUpExam();

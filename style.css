@@ -37,12 +37,29 @@ p {
 #nclass {
 
 }
-
-#time {
+#startEx{
+font-size: 330%;
+}
+#timeBlock{
+	display:flex;
+}
+#titleBlock{
+	display:none;
+	width:100%;
+}
+#titleBlock div{
+	font-family: 'Arial Narrow';
+    font-size: 200%;
+	margin: 0 auto;
+}
+#timeStart,#timeEnd{
+color:red;
+display:none;
+}
+#time ,#timeStart,#timeEnd{
     font-family: 'Consolas';
-    font-size: 100px;
+    font-size: 330%;
     margin: 0 auto;
-    display: block;
     width: fit-content;
 }
 

@@ -1,3 +1,67 @@
+var examTitles = {
+0001:{name:'РУССКИЙ  ',time: 235},
+0002:{name:'МАТЕМАТИК',time: 235},
+0003:{name:'ФИЗИКА   ',time: 180},
+0004:{name:'ХИМИЯ    ',time: 140},
+0005:{name:'ИНФОРМАТИ',time: 150},
+0006:{name:'БИОЛОГИЯ ',time: 180},
+0007:{name:'ИСТОРИЯ  ',time: 180},
+0008:{name:'ГЕОГРАФИЯ',time: 120},
+0009:{name:'АНГЛИЙСКИ',time: 120},
+0012:{name:'ОБЩЕСТВОЗ',time: 180},
+0018:{name:'ЛИТЕРАТУР',time: 235},
+0029:{name:'АНГЛИЙСКИ',time: 120}
+};
+console.log(examTitles);
+var startEx = document.getElementById('startEx');
+var timeStart = document.getElementById('timeStart');
+var timeEnd = document.getElementById('timeEnd');
+var examStarted = false;
+startEx.onclick = function(e){
+	examStarted = true;
+	titleBlock.style.display = 'flex';
+	startEx.style.display = 'none';
+	timeStart.style.display = 'block';
+	timeEnd.style.display = 'block';
+}
+function formatTime(tm){
+    var h=tm.getHours();
+    var m=tm.getMinutes();
+    var s=tm.getSeconds();
+	m=checkTime(m);
+    s=checkTime(s);
+	return h+":"+m+":"+s;
+}
+var duration = 235;
+function startTime(){
+    var tm=new Date();
+	var offset_m = duration*60*1000;
+	var tmEnd = new Date();
+	tmEnd.setTime(tm.getTime()+offset_m);
+    document.getElementById('time').innerHTML=formatTime(tm);
+	if(!examStarted){
+		document.getElementById('timeStart').innerHTML=formatTime(tm);
+		document.getElementById('timeEnd').innerHTML=formatTime(tmEnd);
+	}
+    t=setTimeout('startTime()',500);
+}
+function checkTime(i){
+    if (i<10)
+    {
+        i="0" + i;
+    }
+    return i;
+}
+
+function setDate(){
+	exDate = document.getElementById('exDate');
+	var tm=new Date();
+	var d=FormatNumberLength(tm.getDate(),2);
+	var m=FormatNumberLength(tm.getMonth()+1,2);
+	var y=FormatNumberLength(tm.getFullYear()%100,2);
+	exDate.placeholder = d+'-'+m+'-'+y;
+}
+
 function FormatNumberLength(num, length) {
     var r = "" + num;
     while (r.length < length) {
@@ -16,6 +80,9 @@ function clearNode(node){
         node.removeChild(node.firstChild);
     }
 }
+
+var AuditoryDate = {'05-06-18':{1:02,3:02}};
+
 function setUpExam(){
     var org = {};
     schools = {
@@ -55,6 +122,17 @@ function setUpExam(){
             "     ","     ","     ","     ","     "
             ];
     }
+	auditory.onchange = function(){
+		let aud = parseInt(auditory.value);
+		let code = AuditoryDate[today_str][aud];
+		let subjT = examTitles[code].name;
+		duration = (examTitles[code].time || 235);
+		
+		subjCode.value = code;
+		subjTitle.value = subjT;
+	
+	}
+	
     for(let i in todayOrg){
         let code=todayOrg[i];
         console.log(code);
